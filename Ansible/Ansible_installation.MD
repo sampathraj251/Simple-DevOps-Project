@@ -19,7 +19,10 @@ Ansible is an open-source automation platform. It is very, very simple to set up
     pip install ansible
    ansible --version
    ```
-   
+  *check ansbile config file path should be /etc/ansible/ansbile.cfg  .In latest version it is not available.if it is showing none withe above command then create it.
+    ```sh
+    mkdir /etc/ansible
+    ```
 1. Create a user called ansadmin (on Control node and Managed host)  
    ```sh
    useradd ansadmin
