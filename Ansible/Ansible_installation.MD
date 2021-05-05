@@ -37,7 +37,12 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    ```sh
    echo "ansadmin ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
    ```
-   
+
+   ```
+Note:By default user authentication is not enabled in AWS EC2 instances so we should edit password authentication as <yes> in the sshd_config file available in /etc/ssh/sshd_config. 
+```sh
+vi /etc/ssh/sshd_config
+```
 1. Log in as a ansadmin user on master and generate ssh key (on Control node)
    ```sh 
    sudo su - ansadmin
@@ -47,7 +52,6 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    ```sh 
    ssh-copy-id ansadmin@<target-server>
    ```
-
 1. Ansible server used to create images and store on docker registry. Hence install docker, start docker services and add ansadmin to the docker group. 
    ```sh
    yum install docker
@@ -57,9 +61,9 @@ Ansible is an open-source automation platform. It is very, very simple to set up
    service docker start 
    
    # add user to docker group 
-   usermod -aG docker ansadmin
+   usermod -aG docker ansadmin   
 
-   ```
+
 1. Create a directory /etc/ansible and create an inventory file called "hosts" add control node and managed hosts IP addresses to it. 
  
 ### Validation test
