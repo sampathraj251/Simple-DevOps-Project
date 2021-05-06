@@ -40,6 +40,7 @@ Ansible is an open-source automation platform. It is very, very simple to set up
 
    ```
 Note:By default user authentication is not enabled in AWS EC2 instances so we should edit password authentication as yes in the sshd_config file available in /etc/ssh/sshd_config. 
+Note2:reload sshd after modification..by using command `service reload sshd` and check ok..otherwise use `systemctl enable sshd` `systemctl start sshd` `systemctl status sshd`
 ```sh
 vi /etc/ssh/sshd_config
 ```
