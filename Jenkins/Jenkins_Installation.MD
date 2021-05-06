@@ -6,7 +6,7 @@ Jenkins is a self-contained Java-based program, ready to run out-of-the-box, wit
 1. EC2 Instance 
    - With Internet Access
    - Security Group with Port `8080` open for internet
-1. Java v1.8.x    before installing java chek for for version by using `java -version`.Amazon linux have java version 1.7.o,remove it by `yum remove java-1.7.0*`
+1. Java v1.8.x    before installing java chek for for version by using `java -version`.Amazon linux have default java version 1.7.0,remove it by `yum remove java-1.7.0*`
 
 ## Install Java
 1. We will be using open java for our demo, Get the latest version from http://openjdk.java.net/install/
