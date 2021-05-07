@@ -43,12 +43,12 @@ Access tomcat application from browser on port 8090
    ```sh
    #search for context.xml
    find / -name context.xml    then it will display below 3 files ,we have to update 2 files
-   /opt/apache-tomcat-8.5.65/webapps/examples/META-INF/context.xml
-   /opt/apache-tomcat-8.5.65/webapps/host-manager/META-INF/context.xml      #update this at valueclass name  <!--           >
-   /opt/apache-tomcat-8.5.65/webapps/manager/META-INF/context.xml           #update this at valueclass name  <!--           >
+  # /opt/apache-tomcat-8.5.65/webapps/examples/META-INF/context.xml
+  #/opt/apache-tomcat-8.5.65/webapps/host-manager/META-INF/context.xml      #update this at valueclass name  <!--           >
+  #/opt/apache-tomcat-8.5.65/webapps/manager/META-INF/context.xml           #update this at valueclass name  <!--           >
 
    ```
-1. above command gives 3 context.xml files. comment (<!-- & -->) `Value ClassName` field on files which are under webapp directory. 
+1. above command gives 3 context.xml files.shown as coomments, comment (<!-- & -->) `Value ClassName` field on files which are under webapp directory. 
 After that restart tomcat services to effect these changes
    ```sh 
    tomcatdown
