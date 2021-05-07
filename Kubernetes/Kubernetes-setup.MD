@@ -9,6 +9,7 @@
     unzip awscli-bundle.zip
     #sudo apt-get install unzip - if you dont have unzip in your system
     ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+    aws --version
     ```
 
 1. Install kubectl on ubuntu instance
