@@ -3,17 +3,17 @@
   become: true
 
   tasks:
-  - name: create docker image using war file
-    command: docker build -t simple-devops-image:latest .
+  - name: create docker image using docker file
+    command: docker build -t girmiti-docker-image:latest .
     args:
       chdir: /opt/k8s-lab
 
   - name: create tag to image
-    command: docker tag simple-devops-image 08071989/simple-devops-image
+    command: docker tag girmiti-docker-image sampathgorre/girmiti-docker-image
 
   - name: push image on to dockerhub
-    command: docker push 08071989/simple-devops-image
+    command: docker push sampathgorre/girmiti-docker-image
 
   - name: remove docker images form ansible server
-    command: docker rmi simple-devops-image:latest 08071989/simple-devops-image
+    command: docker rmi girmiti-docker-image:latest sampathgorre/girmiti-docker-image
     ignore_errors: yes
