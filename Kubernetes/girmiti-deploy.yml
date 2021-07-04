@@ -19,7 +19,7 @@ spec:
         app: girmiti-deployment-project
     spec:
       containers:
-      - name: girmiti-devops-project
+      - name: girmiti-docker-container
         image: sampathgorre/girmiti-docker-image
         imagePullPolicy: Always
         ports:
