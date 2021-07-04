@@ -41,17 +41,17 @@
 1. Create a Route53 private hosted zone (you can create Public hosted zone if you have a domain)
    ```sh
    Routeh53 --> hosted zones --> created hosted zone  
-   Domain Name: valaxy.net
+   Domain Name: girmiti.net
    Type: Private hosted zone for Amazon VPC. Make sure you are chosing right VPC if you have multiple
    ```
 
 1. create an S3 bucket
    ```sh
-    aws s3 mb s3://demo.k8s.valaxy.net
+    aws s3 mb s3://demo.k8s.girmiti.net
    ```
 1. Expose environment variable:
    ```sh
-    export KOPS_STATE_STORE=s3://demo.k8s.valaxy.net
+    export KOPS_STATE_STORE=s3://demo.k8s.girmiti.net
    ```
 
 1. Create sshkeys before creating cluster
@@ -61,19 +61,19 @@
 
 1. Create kubernetes cluster definitions on S3 bucket
    ```sh
-   kops create cluster --cloud=aws --zones=ap-south-1b --name=demo.k8s.valaxy.net --dns-zone=valaxy.net --dns private 
+   kops create cluster --cloud=aws --zones=ap-south-1b --name=demo.k8s.girmiti.net --dns-zone=girmiti.net --dns private 
     ```
 
 1. Create kubernetes cluser
     ```sh
-    kops update cluster demo.k8s.valaxy.net --yes
+    kops update cluster demo.k8s.girmiti.net --yes
     ```
 1. To cahnge the kubernetes master and worker instance sizes 
    ```sh 
    kops edit ig --name=<cluster_name> nodes
-   #kops edit ig --name=demo.k8s.valaxy.net nodes 
+   #kops edit ig --name=demo.k8s.girmiti.net nodes 
    kops edit ig --name=<cluster_name> master-<zone_name>
-   #kops edit ig --name=demo.k8s.valaxy.net master-ap-south-1b
+   #kops edit ig --name=demo.k8s.girmiti.net master-ap-south-1b
    ```
 1. to Delete cluster (try once your lab is done)
    ```sh 
