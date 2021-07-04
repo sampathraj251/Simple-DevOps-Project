@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: girmiti-devops-project
-        image: yankils/simple-devops-image
+        image: sampathgorre/girmiti-docker-image
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
