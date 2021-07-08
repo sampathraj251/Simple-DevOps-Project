@@ -77,7 +77,7 @@
    ```
 1. to Delete cluster (try once your lab is done)
    ```sh 
-   kops delete cluster <cluster_name> --yes
+   kops delete cluster demo.k8s.girmiti.net --yes
    ```
 1. Validate your cluster
      ```sh
